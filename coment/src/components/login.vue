@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        
     </div>
 </template>
 
@@ -26,4 +26,3 @@ export default {
 <style scoped lang="scss">
 
 </style>
-
