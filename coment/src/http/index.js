@@ -3,7 +3,7 @@ import axios from 'axios'
 export default function (config) {
   //
   const myaxios = axios.create({
-    baseURL: process.env.VUE_APP_BASE_URL,
+    baseURL:'http://192.168.1.61:8888/api/private/v1/',
     // timeout: 1000,
   })
 
@@ -17,7 +17,12 @@ export default function (config) {
         config.url != '/login' &&
         sessionStorage.getItem('token')
       ) {
-        config.headers['token'] = sessionStorage.getItem('token')
+        // 获取token
+        // config.headers['token'] = sessionStorage.getItem('token')
+
+        // 需要授权的 API ，必须在请求头中使用 `Authorization` 字段提供 `token` 令牌
+        config.headers.Authorization = window.sessionStorage.getItem('token') 
+         return config
       }
 
       return config

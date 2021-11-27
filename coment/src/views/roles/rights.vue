@@ -1,6 +1,6 @@
 <template>
-    <div class="app">
-        <router-view></router-view>
+    <div>
+        权限列表
     </div>
 </template>
 
@@ -24,10 +24,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .app{
-        width: 100%;
-        height: 100%;
-    }
 
 </style>
-
