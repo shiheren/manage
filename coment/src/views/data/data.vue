@@ -1,6 +1,5 @@
 <template>
   <div>
-<<<<<<< HEAD
     <div id="main" style="width: 100%; height: 100%"></div>
   </div>
 </template>
@@ -48,7 +47,7 @@ export default {
         },
       },
       legend: {
-        data:['华东','华南']
+        data:[]
       },
       toolbox: {
         feature: {
@@ -65,7 +64,7 @@ export default {
         {
           type: "category",
           boundaryGap: false,
-          data: ["华东", "", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
         },
       ],
       yAxis: [
@@ -133,32 +132,12 @@ export default {
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
   },
-=======
-    商品数据
-
-
-   
-  </div>
-</template>
-
-<script>
-
-export default {
-  props: {},
-  data() {
-    return {};
-  },
-  methods: {},
->>>>>>> 57b87ae037ebc3f11892c004642f50b0920a2fa3
   components: {},
 };
 </script>
 
 <style scoped lang="scss">
-<<<<<<< HEAD
 div {
   flex: 1;
 }
-=======
->>>>>>> 57b87ae037ebc3f11892c004642f50b0920a2fa3
 </style>
