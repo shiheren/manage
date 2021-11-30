@@ -35,8 +35,8 @@ export default {
   data() {
     return {
       ruleForm: {
-        pass: "",
-        age: "",
+        pass: "123456",
+        age: "admin",
       },
       rules: {
         pass: [
