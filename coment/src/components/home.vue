@@ -36,7 +36,10 @@
 
         </el-aside>
         <router-view></router-view>
+<<<<<<< HEAD
         <!-- <el-main>Main</el-main> -->
+=======
+>>>>>>> 57b87ae037ebc3f11892c004642f50b0920a2fa3
       </el-container>
     </el-container>
   </div>
@@ -56,7 +59,6 @@ export default {
     http({
       url:'menus',
     }).then(res=>{
-      console.log(res)
       this.list=res.data
     })
   },
