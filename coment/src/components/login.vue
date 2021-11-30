@@ -1,27 +1,30 @@
 <template>
   <div class="logs">
+    <img src="./../assets/logo.png" alt="" class="img">
     <div class="log">
       <el-form
         :model="ruleForm"
         status-icon
         :rules="rules"
-        label-width="100px"
         class="demo-ruleForm"
       >
-        <el-form-item label="账号" prop="age">
-          <el-input v-model.number="ruleForm.age"></el-input>
+        <el-form-item prop="age" class="por">
+          <img src="./../img/用户_填充.png" alt="" class="poa">
+          <el-input v-model.number="ruleForm.age"  placeholder="请输入用户名"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="pass">
+        <el-form-item prop="pass" class="por">
+          <img src="./../img/密码.png" alt="" class="poa">
           <el-input
             type="password"
             v-model="ruleForm.pass"
             autocomplete="off"
+            placeholder="请输入密码"
           ></el-input>
         </el-form-item>
 
         <el-form-item>
           <el-button @click="submitForm()">登录</el-button>
-          <!-- <el-button @click="resetForm('ruleForm')">重置</el-button> -->
+          <el-button @click="resetForm('ruleForm')">重置</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -35,8 +38,8 @@ export default {
   data() {
     return {
       ruleForm: {
-        pass: "",
-        age: "",
+        pass: "123456",
+        age: "admin",
       },
       rules: {
         pass: [
@@ -86,6 +89,32 @@ body {
   width: 100%;
   height: 100%;
 }
+.img{
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform:translateX(-50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  border: 10px solid #fff;
+}
+.por{
+  position: relative;
+   input{
+      padding-left:30px;
+   }
+}
+.poa{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+}
 .logs {
   width: 100%;
   height: 100%;
@@ -101,12 +130,26 @@ body {
     padding-top: 30px;
   }
   .demo-ruleForm {
-    width: 500px;
-    height: 200px;
+    width: 450px;
+    height:300px;
     background-color: #fff;
+    border-radius: 3px;
     .el-form-item {
-      margin-right: 20px;
+      margin-left: 20px;
+      width: 410px;
       text-align: right;
+    }
+    .el-form-item:nth-child(1){
+       margin-top: 110px;
+    }
+    button{
+      width: 70px;
+      height: 40px;
+      background-color: #409eff;
+      color: #fff;
+    }
+    button:nth-child(2){
+      background-color: #909399;
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        分类参数
+        商品列表
     </div>
 </template>
 

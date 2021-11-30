@@ -3,7 +3,7 @@
     <!-- 头部 --><el-container>
       <el-header>
         <h2>后台登录系统</h2>
-        <button>退出登录</button>
+        <button @click="fn">退出登录</button>
       </el-header>
       <el-container>
         <el-aside>
@@ -13,8 +13,6 @@
         <el-menu
           default-active="2"
           class="el-menu-vertical-demo"
-          @open="handleOpen"
-          @close="handleClose"
           background-color="#545c64"
           text-color="#fff"
           active-text-color="#ffd04b"
@@ -28,7 +26,7 @@
               <span>{{item.authName}}</span>
             </template>
             <el-menu-item-group v-for="items in item.children" :key="items.id">
-              <router-link :to="items.path"><el-menu-item index="1-1">{{items.authName}}</el-menu-item></router-link>
+              <router-link :to="items.path"><el-menu-item :index="items.path">{{items.authName}}</el-menu-item></router-link>
               
             </el-menu-item-group>
           </el-submenu>
@@ -65,14 +63,14 @@ export default {
     goBack() {
       console.log("go back");
     },
-    // 内容
 
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    },
+    fn(){
+      var r=confirm('是否退出');
+      if(r==true){
+       window.sessionStorage.clear()
+       this.$router.push('/login')
+      }
+    }
   },
   components: {},
 };
